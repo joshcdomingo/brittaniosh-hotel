@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brittaniosh Hotel – Valentine Checkout</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){ emailjs.init("QpbVtRNTOJxQOnG_T"); })();
+  </script>
+</head>
+<body>
+
+  <!-- Hearts overlay -->
+  <div id="hearts"></div>
+
+  <!-- Spinning side images -->
+  <img src="brittnjosh.jpg" class="side-img left-img" alt="Left" />
+  <img src="brittnjosh2.jpg" class="side-img right-img" alt="Right" />
+
+  <!-- Castle SVG -->
+  <svg class="castle" viewBox="0 0 800 400" preserveAspectRatio="xMidYMax slice">
+    <path d="M0 350 L100 250 L150 300 L200 220 L260 280 L320 200 L380 260 L440 210 L500 280 L560 230 L620 300 L680 250 L800 350 Z" fill="#ff6f91"/>
+    <rect x="120" y="180" width="80" height="120" fill="#ff8fab"/>
+    <rect x="300" y="160" width="90" height="140" fill="#ff8fab"/>
+    <rect x="520" y="170" width="80" height="130" fill="#ff8fab"/>
+  </svg>
+
+  <!-- Screens -->
+  <div class="container" id="screen1">
+    <h1>Brittaniosh Hotel</h1>
+    <p>Luxury Valentine reservations 🏰💗</p>
+    <label>Guest Name</label>
+    <input id="guestName" placeholder="Your name" />
+    <label>Email Address</label>
+    <input id="guestEmail" placeholder="your@email.com" />
+    <div class="error" id="emailError">Please enter your email 💌</div>
+    <label>Room Selection</label>
+    <select id="roomType">
+      <option value="Deluxe Valentine Suite">💖 Deluxe Valentine Suite</option>
+      <option value="Executive Romance Room">💘 Executive Romance Room</option>
+      <option value="Unlimited Feelings Suite">💗 Unlimited Feelings Suite</option>
+      <option disabled>🚫 One Night, No Feelings (Sold Out)</option>
+    </select>
+    <label>Check-in</label>
+    <input type="date" value="2026-02-14" disabled />
+    <label>Check-out</label>
+    <input type="date" value="2026-02-15" disabled />
+    <button class="btn" onclick="goToCheckout()">Continue 💕</button>
+  </div>
+
+  <div class="container hidden" id="screen2">
+    <h1>Checkout 💋</h1>
+    <p id="checkoutSummary"></p>
+    <button class="kisspay" onclick="pay()">💋 KissPay - Pay 15 Kisses</button>
+    <p class="fee-info">10 Kisses for stay + 5 Kisses resort fee</p>
+  </div>
+
+  <div class="container hidden" id="screen3">
+    <h1>Reservation Confirmed 🎉</h1>
+    <p id="confirmationText"></p>
+    <p class="valentine-text">
+      So… before we make this stay official 💗<br><br>
+      <strong>Will you be my Valentine?</strong> 💘
+    </p>
+    <div class="yes-buttons">
+      <button class="btn" onclick="valentineYes()">Yes 💖</button>
+      <button class="btn" onclick="valentineYes()">Yes 💖</button>
+    </div>
+  </div>
+
+  <div class="container hidden" id="screen4">
+    <h1>Extra Resort Fee 💕</h1>
+    <p id="extraFeeText"></p>
+    <button class="kisspay" onclick="payExtra()">💋 KissPay - Pay 5 Kisses</button>
+    <p class="fee-info">Extra guest resort fee</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
