@@ -187,3 +187,81 @@ input:disabled { background:#ffe3ec; }
   to { text-shadow: 0 0 25px #ff2f75; }
 }
 
+/* IMAGE ON GIRLFRIEND YES PAGE */
+.gf-image {
+  width: 100%;
+  max-width: 300px; /* adjust as needed */
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* HEARTS */
+#hearts { position: fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+.heart { position:absolute; color:#ff4d88; opacity:0.8; animation: floatUp linear infinite, sparkle 1.5s ease-in-out infinite alternate, rotateHeart linear infinite; }
+@keyframes floatUp {0%{transform:translateY(0) translateX(0) scale(1);} 100%{transform:translateY(-1200px) translateX(50px) scale(1.3);}}
+@keyframes sparkle {0%{opacity:0.5;} 50%{opacity:1;} 100%{opacity:0.5;}}
+@keyframes rotateHeart {0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);}}
+
+/* SECRET HEART BOTTOM RIGHT */
+.secret-heart-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 38px;
+  cursor: pointer;
+  z-index: 99999;
+  color: gold;
+  text-shadow: 0 0 10px gold,0 0 20px hotpink;
+  animation: spinAndPulse 4s linear infinite;
+}
+@keyframes spinAndPulse {0%{transform:rotate(0deg) scale(1);} 50%{transform:rotate(180deg) scale(1.2);} 100%{transform:rotate(360deg) scale(1);}}
+
+/* GIRLFRIEND PAGE */
+.girlfriend-page {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg,#ff9a9e,#ff5fa2,#ff2f75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: Poppins, sans-serif;
+}
+.gf-card {
+  background: rgba(255,255,255,0.95);
+  padding: 50px;
+  border-radius: 25px;
+  text-align: center;
+  width: 500px;
+  max-width: 90%;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  z-index: 2;
+}
+.gf-title {
+  font-size: 42px;
+  color: #ff2f75;
+  margin-bottom: 20px;
+  animation: glowText 1.5s ease-in-out infinite alternate;
+}
+.gf-text {
+  font-size: 20px;
+  color: #7a1c42;
+  line-height: 1.5;
+}
+.gf-big { font-size:28px; color:#b5174f; margin-bottom:20px; }
+.gf-image { width:100%; max-width:300px; border-radius:20px; margin-bottom:20px; box-shadow:0 10px 30px rgba(0,0,0,0.2); object-fit:cover; display:block; margin-left:auto; margin-right:auto; }
+
+.secret-buttons { margin-top:30px; display:flex; justify-content:center; gap:30px; }
+.yes-btn, .no-btn { padding:15px 30px; border:none; border-radius:30px; font-size:18px; font-weight:bold; cursor:pointer; }
+.yes-btn { background:white; color:#ff2f75; }
+.no-btn { background:black; color:white; }
+
+.celebration-hearts { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+.celebration-heart { position:absolute; bottom:-50px; animation: floatUpCelebration linear infinite; }
+@keyframes floatUpCelebration {0%{transform:translateY(0); opacity:1;} 100%{transform:translateY(-110vh); opacity:0;}}
+@keyframes glowText {0%{text-shadow:0 0 10px #ff5fa2;} 100%{text-shadow:0 0 25px #ff2f75;}}
